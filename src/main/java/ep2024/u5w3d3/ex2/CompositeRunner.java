@@ -1,11 +1,15 @@
-package ep2024.u5w3d3.extwo;
+package ep2024.u5w3d3.ex2;
 
 import com.github.javafaker.Faker;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
-public class ExTwo {
-    public static void main(String[] args) {
+@Component
+public class CompositeRunner implements CommandLineRunner {
+    @Override
+    public void run(String[] args) throws Exception {
         Faker faker = new Faker();
 
         Page page1 = new Page("page one");
@@ -27,7 +31,8 @@ public class ExTwo {
         book.addElement(section1);
         book.addElement(section2);
 
+        System.out.println(System.lineSeparator() + "---EXTWO---");
         book.print();
-        System.out.println("Total pages in book '" + book.getTitle() + "' is " + book.getPageCount());
+        System.out.println(System.lineSeparator() + "Total pages in book '" + book.getTitle() + "' is " + book.getPageCount());
     }
 }

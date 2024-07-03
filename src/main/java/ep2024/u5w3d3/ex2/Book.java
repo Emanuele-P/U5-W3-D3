@@ -1,4 +1,4 @@
-package ep2024.u5w3d3.extwo;
+package ep2024.u5w3d3.ex2;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,22 +10,27 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class Section implements BookElement {
+public class Book implements BookElement {
 
     private String title;
+    private List<String> authors;
+    private double price;
     private List<BookElement> elements = new ArrayList<>();
 
-    public Section(String title) {
+    public Book(String title, List<String> authors, double price) {
         this.title = title;
+        this.authors = authors;
+        this.price = price;
     }
 
     public void addElement(BookElement element) {
         elements.add(element);
     }
 
-    @Override
     public void print() {
-        System.out.println("Section: " + title);
+        System.out.println("Book: " + title);
+        System.out.println("Authors: " + String.join(", ", authors));
+        System.out.println("Price: " + price + "€");
         for (BookElement element : elements) {
             element.print();
         }

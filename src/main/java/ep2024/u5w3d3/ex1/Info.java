@@ -1,4 +1,4 @@
-package ep2024.u5w3d3.exone;
+package ep2024.u5w3d3.ex1;
 
 import java.util.Date;
 
